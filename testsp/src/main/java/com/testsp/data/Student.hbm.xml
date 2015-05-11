@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-May-2015 01:30:52 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.testsp.data.Student" table="student" schema="public">
+        <id name="stuId" type="int">
+            <column name="stu_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="teacher" class="com.testsp.data.Teacher" fetch="select">
+            <column name="tea_id" not-null="true" />
+        </many-to-one>
+        <property name="stuName" type="string">
+            <column name="stu_name" />
+        </property>
+    </class>
+</hibernate-mapping>

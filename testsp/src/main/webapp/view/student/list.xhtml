@@ -1,0 +1,50 @@
+	<ui:composition template="/view/template.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui"
+>
+     <ui:define name="content">
+     
+     
+     	<h:form>
+		
+			<p:dataTable id="stutable" var="student" value="#{studentBean.students}">
+			    <p:column headerText="Id">
+			        <h:outputText value="#{student.stuId}" />
+			    </p:column>
+			 
+			    <p:column headerText="Name">
+			        <h:outputText value="#{student.stuName}" />
+			    </p:column>
+			    <p:column headerText="Teacher">
+			        <h:outputText value="#{student.teacher.teaName}" />
+		    </p:column>
+		    
+		    
+	 		<p:column style="text-align:center;width:15%">
+	 		<p:commandButton value="Delete"  update="stutable" process="@this" actionListener="#{studentBean.deleteStudent(student)}" 
+	 			styleClass="ui-priority-primary" />
+	 		</p:column>																	
+	 		<p:column style="text-align:center;width:15%">
+	 		<p:commandButton value="Edit"  update="stutable" process="@this" action="#{studentBean.goToUpdatePage(student)}" 
+	 			styleClass="ui-priority-primary" />
+	 		</p:column>
+	 		
+	 		
+	    	
+	</p:dataTable>
+	
+					
+	</h:form>
+     
+     
+     
+	</ui:define>
+</ui:composition>
+	
+	
+	
+	
+	

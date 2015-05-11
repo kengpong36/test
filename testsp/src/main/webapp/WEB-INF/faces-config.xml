@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+<application>
+    <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+</application>
+
+<navigation-rule>
+	<from-view-id>view/teacher/list.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>view/teacher/edit.xhtml</from-outcome>
+		<to-view-id>edit</to-view-id>
+	</navigation-case>
+
+</navigation-rule>
+
+
+<navigation-rule>
+	<from-view-id>view/teacher/edit.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>view/teacher/list.xhtml</from-outcome>
+		<to-view-id>list</to-view-id>
+	</navigation-case>
+	
+</navigation-rule>
+
+<navigation-rule>
+	<from-view-id>view/student/list.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>view/student/edit.xhtml</from-outcome>
+		<to-view-id>list</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+	<from-view-id>view/student/addstudent.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>view/student/list.xhtml</from-outcome>
+		<to-view-id>list</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+	<from-view-id>view/student/edit.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>view/student/list.xhtml</from-outcome>
+		<to-view-id>list</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+	<from-view-id>view/student/list.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>view/student/addstudent.xhtml</from-outcome>
+		
+		<to-view-id>add</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+</faces-config>
