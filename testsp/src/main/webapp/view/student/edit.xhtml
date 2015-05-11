@@ -1,0 +1,30 @@
+	<ui:composition template="/view/template.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui"
+>
+     <ui:define name="content">
+
+<h:form>
+    <p:growl id="messages"></p:growl>
+    <p:panelGrid columns="2">
+        <p:outputLabel value="Enter Student Name:"></p:outputLabel>
+        <p:inputText value="#{studentBean.student.stuName}"></p:inputText>
+        
+    <p:messages autoUpdate="true" />
+ 
+    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+        <p:outputLabel  value="teacher:" ></p:outputLabel>
+        <p:selectOneMenu  style="width:125px" value="#{studentBean.teacher.teaId}">
+            <f:selectItems value="#{teacherBean.hashTeacher}" />
+        </p:selectOneMenu>
+    </h:panelGrid>             
+    </p:panelGrid>
+    <p:commandButton value="Add" action="#{studentBean.editStudent()}" update="messages"></p:commandButton>
+
+</h:form>
+
+</ui:define>
+</ui:composition>
